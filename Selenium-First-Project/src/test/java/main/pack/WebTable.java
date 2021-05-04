@@ -25,10 +25,14 @@ public class WebTable {
 
 		driver.get(URL);
 
-		// setup 1 Find number of rows in the table
+		// step 1 Find number of Rows in the table
 		List<WebElement> tbRows = driver.findElements(By.xpath("//table[@class='data-list']/tbody/tr"));
 
 		System.out.println(tbRows.size());
+		// step 2 Find number of Columns in the table
+		List<WebElement> tbCols = driver.findElements(By.xpath("//table[@class='data-list']/thead/tr/th"));
+
+		System.out.println(tbCols.size());
 
 	}
 
