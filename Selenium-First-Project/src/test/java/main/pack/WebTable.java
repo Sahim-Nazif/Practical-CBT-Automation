@@ -34,6 +34,17 @@ public class WebTable {
 
 		System.out.println(tbCols.size());
 
+		// step 3 Retrieve the specific row/column data
+		WebElement value = driver.findElement(By.xpath("//table[@class='data-list']//tr[2]/td[1]"));
+		System.out.println(value.getText());
+
+		closeBrowser();
+
+	}
+
+	public static void closeBrowser() {
+
+		driver.close();
 	}
 
 }
