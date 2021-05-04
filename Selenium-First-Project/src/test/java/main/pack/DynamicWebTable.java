@@ -42,6 +42,13 @@ public class DynamicWebTable {
 		WebElement salesLink = driver.findElement(By.xpath("//a[normalize-space()='Sales']"));
 
 		salesLink.click();
+
+		delayDisplay(3000);
+
+		WebElement orderLink = driver.findElement(By.xpath("//a[normalize-space()='Orders']"));
+
+		orderLink.click();
+		delayDisplay(2000);
 		closeBrowser();
 
 	}
