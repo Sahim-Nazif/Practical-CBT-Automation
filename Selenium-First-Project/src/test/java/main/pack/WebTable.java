@@ -45,6 +45,22 @@ public class WebTable {
 				System.out.println(tbData.getText());
 			}
 		}
+
+		// step 5 Print Release Date, Version # of C# language
+
+		for (int r = 1; r <= tbRows; r++) {
+			String language = driver.findElement(By.xpath("//table[@class='data-list']/tbody/tr[" + r + "]/td[1]"))
+					.getText();
+			if (language.equals("C#")) {
+				String versionNumber = driver
+						.findElement(By.xpath("//table[@class='data-list']/tbody/tr[" + r + "]/td[2]")).getText();
+				String releaseDate = driver
+						.findElement(By.xpath("//table[@class='data-list']/tbody/tr[" + r + "]/td[3]")).getText();
+
+				System.out.println(versionNumber + releaseDate);
+
+			}
+		}
 		closeBrowser();
 
 	}
