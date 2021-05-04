@@ -29,22 +29,35 @@ public class DynamicWebTable {
 
 		WebElement userName = driver.findElement(By.xpath("//input[@name='username']"));
 		userName.clear();
-		userName.sendKeys("");
+		userName.sendKeys("demo");
 
 		WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
 		password.clear();
-		password.sendKeys("");
+		password.sendKeys("demo");
 
 		WebElement btn = driver.findElement(By.xpath("//button[@type='submit']"));
 
 		btn.click();
 
+		WebElement salesLink = driver.findElement(By.xpath("//a[normalize-space()='Sales']"));
+
+		salesLink.click();
 		closeBrowser();
 
 	}
 
 	public static void closeBrowser() {
 		driver.close();
+	}
+
+	public static void delayDisplay(long seconds) {
+
+		try {
+			Thread.sleep(seconds);
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+		}
 	}
 
 }
