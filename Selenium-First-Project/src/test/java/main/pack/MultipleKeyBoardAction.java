@@ -2,6 +2,8 @@ package main.pack;
 
 import java.time.Duration;
 
+import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -13,13 +15,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class MultipleKeyBoardAction {
 
-	private static WebDriver driver;
-
-	public static void main(String[] args) {
+	@Test
+	public void keyBoardActionTest() {
 
 		WebDriverManager.chromedriver().setup();
 
-		driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver();
 
 		String URL = "https://text-compare.com/";
 
@@ -34,11 +35,32 @@ public class MultipleKeyBoardAction {
 
 		Actions action = new Actions(driver);
 
-		// CTRL + A
+		// CTRL + A (select the text)
 		action.keyDown(Keys.CONTROL);
 		action.sendKeys("a");
 		action.keyUp(Keys.CONTROL);
 		action.perform();
+
+		// CTRL + C (copy the text)
+		action.keyDown(Keys.CONTROL);
+		action.sendKeys("c");
+		action.keyUp(Keys.CONTROL);
+		action.perform();
+
+		// CTRL + TAB (switch the next text-area to paste the text)
+		action.sendKeys(Keys.TAB);
+		action.perform();
+
+		// CTRL + V (paste the text)
+		action.keyDown(Keys.CONTROL);
+		action.sendKeys("v");
+		action.keyUp(Keys.CONTROL);
+		action.perform();
+
+		String expectedResult = txtarea1.getText();
+		String actualResult = txtarea2.getText();
+
+		Assert.assertEquals(expectedResult, actualResult);
 
 	}
 
