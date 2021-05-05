@@ -26,11 +26,32 @@ public class MouseDoubleClickAction {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(URL);
 
-		WebElement btn = driver.findElement(By.xpath("//button[normalize-space()='Double-click me']"));
+		// switch to iframe since there are two iframes on the page
+		driver.switchTo().frame("iframeResult");
+
+		WebElement btn = driver.findElement(By.xpath("//body/button[.='Double-click me']"));
 		Actions action = new Actions(driver);
 
 		action.doubleClick(btn).perform();
 
+		delayDisplay(3000);
+		closeBrowser();
+
+	}
+
+	public static void delayDisplay(long miliseconds) {
+
+		try {
+			Thread.sleep(miliseconds);
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+		}
+
+	}
+
+	public static void closeBrowser() {
+		driver.quit();
 	}
 
 }
