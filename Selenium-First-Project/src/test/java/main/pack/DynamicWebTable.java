@@ -57,10 +57,10 @@ public class DynamicWebTable {
 		driver.close();
 	}
 
-	public static void delayDisplay(long seconds) {
+	public static void delayDisplay(long miliseconds) {
 
 		try {
-			Thread.sleep(seconds);
+			Thread.sleep(miliseconds);
 		} catch (InterruptedException e) {
 
 			e.printStackTrace();

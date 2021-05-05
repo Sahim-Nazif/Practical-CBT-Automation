@@ -45,10 +45,10 @@ public class HandleLinks {
 
 	}
 
-	public static void delayRun(long seconds) {
+	public static void delayRun(long miliseconds) {
 
 		try {
-			Thread.sleep(seconds);
+			Thread.sleep(miliseconds);
 		} catch (InterruptedException e) {
 
 			e.printStackTrace();

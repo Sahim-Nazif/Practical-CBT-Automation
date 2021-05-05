@@ -32,10 +32,10 @@ public class GetTextVsGetAttributeValue {
 
 	}
 
-	public static void delayScreen(long seconds) {
+	public static void delayScreen(long miliseconds) {
 
 		try {
-			Thread.sleep(seconds);
+			Thread.sleep(miliseconds);
 		} catch (InterruptedException e) {
 
 			e.printStackTrace();
