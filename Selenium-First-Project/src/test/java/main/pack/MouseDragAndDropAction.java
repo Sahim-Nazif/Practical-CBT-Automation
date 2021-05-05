@@ -22,6 +22,28 @@ public class MouseDragAndDropAction {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(URL);
+
+		driver.switchTo().frame("iframeResult");
+
+		delayDisplay(3000);
+
+		closeBrowser();
+
+	}
+
+	public static void delayDisplay(long miliseconds) {
+
+		try {
+			Thread.sleep(miliseconds);
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+		}
+
+	}
+
+	public static void closeBrowser() {
+		driver.close();
 	}
 
 }
