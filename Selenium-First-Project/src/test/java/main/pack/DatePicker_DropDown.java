@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -26,6 +27,18 @@ public class DatePicker_DropDown {
 
 		WebElement dob = driver.findElement(By.xpath("//input[@id='dob']"));
 		dob.click();
+
+		// selecting month from the drop-down
+		WebElement month = driver.findElement(By.xpath("//select[@class='ui-datepicker-month']"));
+		Select selectMonth = new Select(month);
+		selectMonth.selectByVisibleText("Dec");
+
+		// selecting year from the drop-down
+		WebElement year = driver.findElement(By.xpath("//select[@class='ui-datepicker-yea"));
+		Select selectYear = new Select(year);
+		selectYear.selectByVisibleText("1988");
+		// pick day
+		WebElement day = driver.findElement(By.xpath("//select[@class='ui-datepicker-yea"));
 
 		delayDisplay(2000);
 		closeBrowser();
