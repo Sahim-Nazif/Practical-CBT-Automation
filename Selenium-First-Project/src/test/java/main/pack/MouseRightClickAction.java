@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class MouseActions {
+public class MouseRightClickAction {
 
 	private static WebDriver driver;
 
@@ -26,8 +26,14 @@ public class MouseActions {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get(URL);
 
+		// Perform mouse right click action
 		WebElement rightClickBtn = driver.findElement(By.xpath("//span[@class='context-menu-one btn btn-neutral']"));
 		Actions action = new Actions(driver);
+		action.contextClick(rightClickBtn).perform();
+
+		delayDisplay(3000);
+
+		closeBrowser();
 
 	}
 
