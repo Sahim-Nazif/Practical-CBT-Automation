@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class DragAndDrop {
+public class MouseDragAndDropAction {
 
 	private static WebDriver driver;
 
