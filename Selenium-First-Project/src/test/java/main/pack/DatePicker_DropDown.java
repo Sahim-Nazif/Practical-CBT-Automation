@@ -34,11 +34,12 @@ public class DatePicker_DropDown {
 		selectMonth.selectByVisibleText("Dec");
 
 		// selecting year from the drop-down
-		WebElement year = driver.findElement(By.xpath("//select[@class='ui-datepicker-yea"));
+		WebElement year = driver.findElement(By.xpath("//select[@class='ui-datepicker-year']"));
 		Select selectYear = new Select(year);
 		selectYear.selectByVisibleText("1988");
 		// pick day
-		WebElement day = driver.findElement(By.xpath("//select[@class='ui-datepicker-yea"));
+		WebElement day = driver.findElement(By.xpath("//a[normalize-space()='20']"));
+		day.click();
 
 		delayDisplay(2000);
 		closeBrowser();
