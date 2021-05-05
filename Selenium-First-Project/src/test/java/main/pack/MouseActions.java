@@ -25,4 +25,19 @@ public class MouseActions {
 
 	}
 
+	public static void delayDisplay(long miliseconds) {
+
+		try {
+			Thread.sleep(miliseconds);
+		} catch (InterruptedException e) {
+
+			e.printStackTrace();
+		}
+
+	}
+
+	public static void closeBrowser() {
+		driver.quit();
+	}
+
 }
