@@ -23,8 +23,7 @@ public class DatePickingAutomated {
 
 		driver.get(URL);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		String year = "2021";
-		String month = "August";
+		String year = "August 2021";
 		String date = "11";
 		WebElement departDate = driver.findElement(By.xpath("//div[@class='date-input-inner-text _j0H']"));
 		departDate.click();
@@ -33,11 +32,8 @@ public class DatePickingAutomated {
 		while (true) {
 			String monthYear = driver.findElement(By.xpath("//div[normalize-space()='May 2021']")).getText();
 
-			String array[] = monthYear.split(" ");
-			String mon = array[0];
-			String yr = array[1];
+			if (monthYear.equalsIgnoreCase(year))
 
-			if (mon.equalsIgnoreCase(month) && yr.equalsIgnoreCase(year))
 				break;
 
 			else
