@@ -1,6 +1,7 @@
 package main.pack;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -38,10 +39,21 @@ public class DatePicker_DropDown {
 		Select selectYear = new Select(year);
 		selectYear.selectByVisibleText("1988");
 		// pick day
-		WebElement day = driver.findElement(By.xpath("//a[normalize-space()='20']"));
-		day.click();
+		String day = "20";
 
-		delayDisplay(2000);
+		List<WebElement> days = driver.findElements(By.xpath("//a[normalize-space()='20']"));
+
+		for (WebElement dates : days) {
+
+			String expectedDay = dates.getText();
+
+			if (expectedDay.equals(day)) {
+				dates.click();
+				break;
+			}
+		}
+
+		delayDisplay(4000);
 		closeBrowser();
 
 	}
