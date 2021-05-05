@@ -33,7 +33,9 @@ public class KeyBoardAction {
 
 		action.sendKeys(input, "L").perform();
 
+		// Well-known keyboard actions can be implemented via action
 		action.sendKeys(Keys.ENTER).perform();
+		action.sendKeys(Keys.ESCAPE).perform();
 
 	}
 
