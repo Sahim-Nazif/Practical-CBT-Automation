@@ -27,6 +27,9 @@ public class JavaScriptExecutor {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("alert('google chrome is opened')");
 
+		// scroll down the web-page
+		js.executeScript("window.scrollBy(0,500)");
+
 	}
 
 }
