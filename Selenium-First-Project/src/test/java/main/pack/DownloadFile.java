@@ -16,7 +16,7 @@ public class DownloadFile {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 
-		String URL = "https://www.cheapflights.ca/";
+		String URL = "https://file-examples.com/index.php/sample-documents-download/";
 		driver.manage().window().maximize();
 
 		driver.get(URL);
