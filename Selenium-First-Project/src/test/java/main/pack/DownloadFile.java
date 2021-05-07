@@ -55,6 +55,8 @@ public class DownloadFile {
 		// download the MS Word file
 		btn.click();
 
+		driver.close();
+
 	}
 
 }
