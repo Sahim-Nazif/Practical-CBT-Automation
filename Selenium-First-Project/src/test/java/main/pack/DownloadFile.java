@@ -2,7 +2,9 @@ package main.pack;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -21,6 +23,14 @@ public class DownloadFile {
 
 		driver.get(URL);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		WebElement btn = driver.findElement(By.xpath(
+				"//a[@href='https://file-examples.com/index.php/sample-documents-download/sample-doc-download/']"));
+		System.out.println(btn.getAttribute("href"));
+		System.out.println(btn.getText());
+		// download the MS Word file
+		btn.click();
+
 	}
 
 }
