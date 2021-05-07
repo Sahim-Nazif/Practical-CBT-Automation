@@ -22,12 +22,27 @@ public class DownloadFile {
 		HashMap preferences = new HashMap();
 		preferences.put("download.default_directory", location);
 
+		// Using Chrome Browser
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("prefs", preferences);
 
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver(options);
+		// For Edge the option is similar to Chrome and will just instance to edge
+		// browser
 
+		// For firefox the setting is different
+
+		/*
+		 * FirefoxeProfile profile= new FireFoxProfile();
+		 * profile.setPreference("browser.helperApps.neverAsk.saveToDisk",
+		 * "application/msword"); profile.setPreference("browser.download.folderList",2)
+		 * //0- will download on desktop location 1 is dlownloads folder on local
+		 * computer 2 is we can spcificy location
+		 * profile.setPreference("browser.download.dir", location); FirefoxOptions
+		 * options= new FireFoxOptions(); options.setProfile(profile);
+		 * 
+		 */
 		String URL = "https://file-examples.com/index.php/sample-documents-download/sample-doc-download/";
 		driver.manage().window().maximize();
 
